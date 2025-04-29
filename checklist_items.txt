@@ -10,17 +10,22 @@ Location
 Burn plan
 	all required signatures present?
 	go/no-go checklist completed?
-
+	any other required forms signed?
+	
 
 Burn Unit(s)
 	Fire breaks completed and adequate?
+	
 	Values at Risk 
 		kind/location
 		protected/risk mitigated?	
 	
+	water sources located and adequate?
+	
 
 Weather/Prescription
 	is current weather forecast within prescription?
+		note forecast
 	are any weather events forecast to occur within 24 hours of ignition?
 	
 	are fuel moistures <= 90th percentile 
@@ -58,6 +63,14 @@ Equipment
 	belt weather kit or Kestrel
 	
 	'Smoke on road' signs
+
+
+Communications
+	number radios needed?
+		number present
+	
+	radio frequency(s) set?
+	radio checks made?
 	
 	
 Notifications
@@ -75,17 +88,30 @@ Notifications
 	Neighbors
 
 
+Safety
+	Specific safety hazards present? (notes)
+		are they mitigated?
+
+
+Test fire
+	test fire ignitetd?
+	test fire successful?
+
+
 Contingency planning
 	are contingency lines present?
 	on or off the property?
 
 
 Smoke management
-
+	is forecast ventilation rate (transport winds and mixing height) within prescription?
+	will smoke likely impact public roadway or sensitive receptor?
+	have any required TCEQ permits/special permissions been obtained?
+	
 
 Briefing
 	all personnel briefed?
-
+	maps distributed?
 
 Other
 	Is the county in a burn ban?
