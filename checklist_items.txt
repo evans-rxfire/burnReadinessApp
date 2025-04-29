@@ -1,0 +1,94 @@
+Burn Readiness Checklist
+
+Date
+
+Location
+	County
+	Property Name (optional)
+
+
+Burn plan
+	all required signatures present?
+	go/no-go checklist completed?
+
+
+Burn Unit(s)
+	Fire breaks completed and adequate?
+	Values at Risk 
+		kind/location
+		protected/risk mitigated?	
+	
+
+Weather/Prescription
+	is current weather forecast within prescription?
+	are any weather events forecast to occur within 24 hours of ignition?
+	
+	are fuel moistures <= 90th percentile 
+	are NFDRS indeces <= 90th percentile
+	
+	is current KBDI within presctiption
+	
+Personnel
+	minimum number of crew required?
+		crew minimum met?
+	total number present? names?
+
+
+Equipment
+	number of pumper/engines required? 
+		number present?
+	UTVs (w/ sprayer) required?
+		number present?
+	ATVs (w/ sprayer) required?
+		number present?
+		
+	other equipment required and present?
+		tractor
+		dozer
+		skid steer
+		
+	drip torches required?
+		number present
+	amount of drip torch fuel present
+	
+	handtools?
+	
+	first aid kit
+	
+	belt weather kit or Kestrel
+	
+	'Smoke on road' signs
+	
+	
+Notifications
+	County dispatch - time called
+	nearest fire dept
+	County Fire Marshal
+	County Emergency Mgmt Coordinator
+	
+	TAMFS Dispatch (rxburns@tfs.tamu.edu)
+	local TAMFS office
+	
+	TCEQ
+	NWS
+	
+	Neighbors
+
+
+Contingency planning
+	are contingency lines present?
+	on or off the property?
+
+
+Smoke management
+
+
+Briefing
+	all personnel briefed?
+
+
+Other
+	Is the county in a burn ban?
+	Has an exemption to the ban been granted?
+		date
+		in what form?
