@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prescribed Fire Readiness Checklist</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Prescribed Fire Readiness Checklist</h1>
+      <p>Use this checklist to ensure all critical burn prep steps are complete.</p>
+    </header>
+
+    <!-- Checklist Form -->
+    <form id="checklist-form">
+
+      <!-- Project Info -->
+      <section>
+        <label for="burn-name">Burn Name:</label>
+        <input type="text" id="burn-name" name="burnName" required />
+      </section>
+
+      <!-- Personnel Section -->
+      <fieldset>
+        <legend>Personnel</legend>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="burn-boss" name="burnBoss" />
+          <label for="burn-boss">Burn Boss Assigned</label>
+          <input type="text" placeholder="Notes..." class="notes" />
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="briefing-complete" name="briefingComplete" />
+          <label for="briefing-complete">Briefing Completed</label>
+          <input type="text" placeholder="Notes..." class="notes" />
+        </div>
+      </fieldset>
+
+      <!-- Equipment Section -->
+      <fieldset>
+        <legend>Equipment</legend>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="drip-torches-filled" name="dripTorchesFilled" />
+          <label for="drip-torches-filled">Drip Torches Filled</label>
+          <input type="text" placeholder="Notes..." class="notes" />
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="pump-test-complete" name="pumpTestComplete" />
+          <label for="pump-test-complete">Pump Test Complete</label>
+          <input type="text" placeholder="Notes..." class="notes" />
+        </div>
+      </fieldset>
+
+      <!-- Buttons -->
+      <div class="form-buttons">
+        <button type="submit">Save Checklist</button>
+        <button type="button" id="reset-btn">Reset</button>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
