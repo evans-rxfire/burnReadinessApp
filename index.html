@@ -1,70 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prescribed Fire Readiness Checklist</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Prescribed Fire Readiness Checklist</h1>
-      <p>Use this checklist to ensure all critical burn prep steps are complete.</p>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prescribed Fire Readiness Checklist</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-    <!-- Checklist Form -->
-    <form id="checklist-form">
+    <body>
+        <div class="container">
+            <header>
+                <h1>Prescribed Fire Readiness Checklist</h1>
+                <p>Use this checklist to ensure all critical burn prep steps are complete.</p>
+            </header>
 
-      <!-- Project Info -->
-      <section>
-        <label for="burn-name">Burn Name:</label>
-        <input type="text" id="burn-name" name="burnName" required />
-      </section>
+        <!-- Checklist Form -->
+            <form id="checklist-form">
 
-      <!-- Personnel Section -->
-      <fieldset>
-        <legend>Personnel</legend>
+            <!-- Project Info -->
+                <section>
+                    <label for="burn-name">Burn Name:</label>
+                    <input type="text" id="burn-name" name="burnName" required>
+                    <label for="burn-date">Date of Burn:</label>
+                    <input type="date" id="burn-date" name="burnDate" required>
+                </section>
 
-        <div class="checklist-item">
-          <input type="checkbox" id="burn-boss" name="burnBoss" />
-          <label for="burn-boss">Burn Boss Assigned</label>
-          <input type="text" placeholder="Notes..." class="notes" />
+            <!-- Burn Ban Section -->
+                <fieldset>
+                    <legend>Burn Ban</legend>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="burn-ban" name="burnBan">
+                        <label for="burn-ban">County in Burn Ban</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="exemption-granted" name="exemptionGranted">
+                        <label for="exemption-granted">Exemption to Burn Ban Granted</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                    <div>
+                        <label for="date-granted">Date Exepmtion Granted</label>
+                        <input type="date" id="date-granted" name="dateGranted">
+                    </div>
+                    
+                </fieldset>
+            
+            <!-- Burn Plan Section -->
+                <fieldset>
+                    <legend>Burn Plan</legend>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="signatures" name="signatures">
+                        <label for="signatures">Burn Plan Signed</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="review-complete" name="reviewComplete">
+                        <label for="reviewComplete">Burn Plan Reviewed</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="forms-signed" name="formsSigned">
+                        <label for="forms-signed">Other Forms Signed</label>
+                        <input type="text" placeholder="Liability Release, etc..." class="notes">
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="maps-printed" name="mapsPrinted">
+                        <label for="maps-printed">Maps Printed/Sent</label>
+                    </div>
+                </fieldset>
+            
+            <!-- Burn Unit Section -->
+            
+            <!-- Weather/Prescription Section -->
+            
+            <!-- Smoke Management Section-->
+            
+            <!-- Personnel Section -->
+                <fieldset>
+                    <legend>Personnel</legend>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="burn-boss" name="burnBoss">
+                        <label for="burn-boss">Burn Boss Assigned</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="crew-present" name="crewPresent">
+                        <label for="crew-present">Required Crew Present</label>
+                        <input type="number" id="crew-minimum" name="crewMinimum">
+                        <label for="crew-minimum">Minimum Crew Required</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="briefing-complete" name="briefingComplete">
+                        <label for="briefing-complete">Briefing Completed</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                </fieldset>
+
+            <!-- Equipment Section -->
+                <fieldset>
+                    <legend>Equipment</legend>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="drip-torches-filled" name="dripTorchesFilled">
+                        <label for="drip-torches-filled">Drip Torches Filled</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="pump-test-complete" name="pumpTestComplete">
+                        <label for="pump-test-complete">Pump Test Complete</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                </fieldset>
+
+            <!-- Communications Section -->
+            
+            <!-- Notifications Section -->
+            
+            <!-- Safety Section -->
+            
+            <!-- Contingency Section -->
+            
+            <!-- Test Fire Section -->
+            
+            <!-- Go/No-go Section -->
+                <fieldset>
+                    <legend>Go/No-Go Checklist</legend>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="go-nogo-complete" name="goNogoComplete">
+                        <label for="go-nogo-complete">Go/No-Go Checklist Completed</label>
+                    </div>
+                </fieldset>
+            
+            <!-- Buttons -->
+                <div class="form-buttons">
+                    <button type="submit">Save Checklist</button>
+                    <button type="button" id="reset-btn">Reset</button>
+                </div>
+
+            </form>
         </div>
 
-        <div class="checklist-item">
-          <input type="checkbox" id="briefing-complete" name="briefingComplete" />
-          <label for="briefing-complete">Briefing Completed</label>
-          <input type="text" placeholder="Notes..." class="notes" />
-        </div>
-      </fieldset>
-
-      <!-- Equipment Section -->
-      <fieldset>
-        <legend>Equipment</legend>
-
-        <div class="checklist-item">
-          <input type="checkbox" id="drip-torches-filled" name="dripTorchesFilled" />
-          <label for="drip-torches-filled">Drip Torches Filled</label>
-          <input type="text" placeholder="Notes..." class="notes" />
-        </div>
-
-        <div class="checklist-item">
-          <input type="checkbox" id="pump-test-complete" name="pumpTestComplete" />
-          <label for="pump-test-complete">Pump Test Complete</label>
-          <input type="text" placeholder="Notes..." class="notes" />
-        </div>
-      </fieldset>
-
-      <!-- Buttons -->
-      <div class="form-buttons">
-        <button type="submit">Save Checklist</button>
-        <button type="button" id="reset-btn">Reset</button>
-      </div>
-
-    </form>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+        <script src="main.js"></script>
+        
+    </body>
 </html>
