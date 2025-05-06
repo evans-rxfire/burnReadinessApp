@@ -1,19 +1,19 @@
 Burn Readiness Checklist
 
-Date
+--Date
 
-Location
+--Location
 	County
 	Property Name (optional)
 
 
-Burn plan
+--Burn plan
 	all required signatures present?
 	go/no-go checklist completed?
 	any other required forms signed?
 	
 
-Burn Unit(s)
+--Burn Unit(s)
 	Fire breaks completed and adequate?
 	
 	Values at Risk 
@@ -33,7 +33,7 @@ Weather/Prescription
 	
 	is current KBDI within presctiption
 	
-Personnel
+--Personnel
 	minimum number of crew required?
 		crew minimum met?
 	total number present? names?

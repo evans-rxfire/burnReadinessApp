@@ -21,6 +21,8 @@
                 <section>
                     <label for="burn-name">Burn Name:</label>
                     <input type="text" id="burn-name" name="burnName" required>
+                    <label for="burn-county">County</label>
+                    <input type="text" id="burn-county" name="burnCounty" placeholder="County">
                     <label for="burn-date">Date of Burn:</label>
                     <input type="date" id="burn-date" name="burnDate" required>
                 </section>
@@ -76,7 +78,38 @@
                 </fieldset>
             
             <!-- Burn Unit Section -->
-            
+                <fieldset>
+                    <legend>Burn Unit</legend>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="firebreaks-complete" name="firebreaksComplete">
+                        <label for="firebreaks-complete">Fire Breaks Complete and Adequate</label>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="var-identified" name="varIdentified">
+                        <label for="var-identified">Values at Risk Identified</label>
+                        <input type="text" placeholder="Structures, fences, blinds, etc..." class="notes">
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="risk-mitigated" name="riskMitigated">
+                        <label for="risk-mitigated">Values Protected/Risks Mitigated</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="water-identified" name="waterIdentified">
+                        <label for="water-identified">Water Source(s) Identified/Located</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="water-adequate" name="waterAdequate">
+                        <label for="water-adequate">Water Source(s) Adequate</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                </fieldset>
             <!-- Weather/Prescription Section -->
             
             <!-- Smoke Management Section-->
