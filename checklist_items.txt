@@ -23,7 +23,7 @@ Burn Readiness Checklist
 	water sources located and adequate?
 	
 
-Weather/Prescription
+--Weather/Prescription
 	is current weather forecast within prescription?
 		note forecast
 	are any weather events forecast to occur within 24 hours of ignition?
