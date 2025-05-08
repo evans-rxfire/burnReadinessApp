@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Prescribed Fire Readiness Checklist</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
     </head>
 
     <body>
@@ -40,10 +42,10 @@
                     <div class="checklist-item">
                         <input type="checkbox" id="exemption-granted" name="exemptionGranted">
                         <label for="exemption-granted">Exemption to Burn Ban Granted</label>
-                        <input type="text" placeholder="Notes..." class="notes">
+                        <input type="text" placeholder="Via email, phone, etc..." class="notes">
                     </div>
                     <div>
-                        <label for="date-granted">Date Exepmtion Granted</label>
+                        <label for="date-granted">Date Exemption Granted</label>
                         <input type="date" id="date-granted" name="dateGranted">
                     </div>
                     
@@ -54,14 +56,14 @@
                     <legend>Burn Plan</legend>
                     
                     <div class="checklist-item">
-                        <input type="checkbox" id="signatures" name="signatures">
+                        <input type="checkbox" id="signatures" name="signatures" required>
                         <label for="signatures">Burn Plan Signed</label>
                         <input type="text" placeholder="Notes..." class="notes">
                     </div>
                     
                     <div class="checklist-item">
                         <input type="checkbox" id="review-complete" name="reviewComplete">
-                        <label for="reviewComplete">Burn Plan Reviewed</label>
+                        <label for="review-complete">Burn Plan Reviewed</label>
                         <input type="text" placeholder="Notes..." class="notes">
                     </div>
                     
@@ -116,7 +118,7 @@
                     <legend>Weather/Prescription</legend>
                     
                     <div class="checklist-item">
-                        <input type="checkbox" id="forecast-within-prescription" name="forecastWithinPrescription">
+                        <input type="checkbox" id="forecast-within-prescription" name="forecastWithinPrescription" required>
                         <label for="forecast-within-prescription">Weather Forecast Within Prescription</label>
                     </div>
                     
@@ -126,27 +128,71 @@
                         <input type="text" placeholder="Notes..." class="notes">
                     </div>
                     
-                    <div class="checklist-item">
-                        <input type="checkbox" id="fuel-moisture" name="fuelMoisture">
-                        <label for="fuel-moisture">Fuel Moistures Under 90th Percentile</label>
-                    </div>
-                    
-                    <div class="checklist-item">
-                        <input type="checkbox" id="nfdrs-indeces" name="nfdrsIndeces">
-                        <label for="nfdrs-indeces">NFDRS Indeces Under 90th Percentile</label>
-                    </div>
-                    
-                    <div class="checklist-item">
-                        <input type="checkbox" id="kbdi" name="kbdi">
-                        <label for="kbdi">KBDI Within Prescription</label>
-                    </div>
+                    <fieldset>
+                        <legend>Fuel Moistures/Fire Danger Indices</legend>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="fuel-moisture" name="fuelMoisture">
+                            <label for="fuel-moisture">Fuel Moistures Under 90th Percentile</label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="nfdrs-indices" name="nfdrsIndices">
+                            <label for="nfdrs-indices">NFDRS Indices Under 90th Percentile</label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="kbdi" name="kbdi">
+                            <label for="kbdi">KBDI Within Prescription</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>On-Site Weather</legend>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="weather-kit-present" name="weatherKitPresent">
+                            <label for="weather-kit-present">Kestrel or Belt Weather Kit Present</label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="weather-monitor-assigned" name="weatherMonitorAssigned">
+                            <label for="weather-monitor-assigned">Weather Monitor Assigned</label>
+                        </div>
+                    </fieldset>
                 </fieldset>
                 
             <!-- Smoke Management Section-->
                 <fieldset>
                     <legend>Smoke Management</legend>
                     
-                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ventilation-rate" name="ventilationRate">
+                        <label for="ventilation-rate">Ventilation Rate (transport winds x mixing height) Within Prescription</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="smoke-impacts" name="smokeImpacts">
+                        <label for="smoke-impacts">Smoke Likely to Impact Roads or Sensitive Receptors</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="smoke-mitigated" name="smokeMitigated">
+                        <label for="smoke-mitigated">Steps Taken to Mitigate Smoke Impacts</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="tceq-permit" name="tceqPermit">
+                        <label for="tceq-permit">TCEQ Permit/Special Permission Obtained</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="smoke-signs-set" name="smokeSignsSet">
+                        <label for="smoke-signs-set">'Smoke on Road' Signs Set Up</label>
+                    </div>
                 </fieldset>
                 
             <!-- Personnel Section -->
@@ -162,14 +208,15 @@
                     <div class="checklist-item">
                         <input type="checkbox" id="crew-present" name="crewPresent">
                         <label for="crew-present">Required Crew Present</label>
-                        <input type="number" id="crew-minimum" name="crewMinimum">
+                    </div>
+                    <div class="checklist-item">
                         <label for="crew-minimum">Minimum Crew Required</label>
+                        <input type="number" id="crew-minimum" name="crewMinimum">
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="briefing-complete" name="briefingComplete">
                         <label for="briefing-complete">Briefing Completed</label>
-                        <input type="text" placeholder="Notes..." class="notes">
                     </div>
                 </fieldset>
 
@@ -178,41 +225,198 @@
                     <legend>Equipment</legend>
 
                     <div class="checklist-item">
-                        <input type="checkbox" id="drip-torches-filled" name="dripTorchesFilled">
-                        <label for="drip-torches-filled">Drip Torches Filled</label>
+                        <input type="checkbox" id="engines-present" name="enginesPresent">
+                        <label for="engines-present">Required Engines/Pumpers Present</label>
+                    </div>
+                    <div class="checklist-item">
+                        <label for="engine-minimum">Minimum Engines/Pumpers Required</label>
+                        <input type="number" id="engine-minimum" name="engineMinimum">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="utvs-present" name="utvsPresent">
+                        <label for="utvs-present">Required UTVs/ATVs Present</label>
+                    </div>
+                    <div class="checklist-item">
+                        <label for="utv-minimum">Minimum UTVs/ATVs Required</label>
+                        <input type="number" id="utv-minimum" name="utvsMinimum">
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="pump-test-complete" name="pumpTestComplete">
+                        <label for="pump-test-complete">Pump Test(s) Complete</label>
                         <input type="text" placeholder="Notes..." class="notes">
                     </div>
 
                     <div class="checklist-item">
-                        <input type="checkbox" id="pump-test-complete" name="pumpTestComplete">
-                        <label for="pump-test-complete">Pump Test Complete</label>
+                        <input type="checkbox" id="equipment-present" name="equipmentPresent">
+                        <label for="equipment-present">Other Required Equipment Present</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="handtools-present" name="handtoolsPresent">
+                        <label for="handtools-present">Handtools</label>
+                    </div>
+
+                    <fieldset>
+                        <legend>Driptorches</legend>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="driptorches-filled" name="driptorchesFilled">
+                            <label for="drip-torches-filled">Drip Torches Filled</label>
+                        </div>
+                        <div class="checklist-item">
+                            <label for="driptorch-minimum">Number of Driptorches</label>
+                            <input type="number" id="driptorch-minimum" name="driptorchMinimum">
+                        </div>
+                        <div class="checklist-item">
+                            <label for="driptorch-fuel">Driptorch Fuel (gal)</label>
+                            <input type="number" id="driptorch-fuel" name="driptorchFuel">
+                        </div>
+                    </fieldset>
+                </fieldset>
+
+            <!-- Communications Section -->
+                <fieldset>
+                    <legend>Communications</legend>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="radios-present" name="radiosPresent">
+                        <label for="radios-present">Required Radios Assigned</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="frequencies-set" name="frequenciesSet">
+                        <label for="frequencies-set">Radio Frequencies Set</label>
+                        <input type="text" placeholder="Channels, Freqs, etc..." class="notes">
+                    </div>
+                </fieldset>
+
+            <!-- Notifications Section -->
+                <fieldset>
+                    <legend>Notifications</legend>
+
+                    <fieldset>
+                        <legend>County</legend>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="dispatch-notified" name="dispatchNotified" required>
+                            <label for="dispatch-notified">County Dispatch Notified</label>
+                            <label for="dispatch-time-called">Time Dispatch Called</label>
+                            <input type="time" id="dispatch-time-called" name="dispatchTimeCalled">
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="fire-dept-notified" name="fireDeptNotified">
+                            <label for="fire-dept-notified">Fire Dept(s) Notified</label>
+                            <input type="text" placeholder="Notes..." class="notes">
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="fire-marshal-notified" name="fireMarshalNotified">
+                            <label for="fire-marshal-notified">County Fire Marshal Notified</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="emc-notified" name="emcNotified">
+                            <label for="emc-notified">County Emergency Mgmt Coordinator Notified</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Texas A&M Forest Service</legend>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="tamfs-dispatch-notified" name="tamfsDispatchNotified" required>
+                            <label for="tamfs-dispatch-notified">TAMFS Dispatch Notified (rxburns@tfs.tamu.edu)</label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="tamfs-local-office-notified" name="tamfsLocalOfficeNotified">
+                            <label for="tamfs-local-office-notified">TAMFS Local Office Notified</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="tceq-notified" name="tceqNotified">
+                        <label for="tceq-notified">TCEQ Notified</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="neighbors-notified" name="neighborsNotified">
+                        <label for="neighbors-notified">Neighbors Notified</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                </fieldset>
+            
+            <!-- Safety Section -->
+                <fieldset>
+                    <legend>Safety</legend>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="safety-hazards-present" name="safetyHazardsPresent">
+                        <label for="safety-hazards-present">Safety Hazards Present</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="safety-hazards-mitigated" name="safetyHazardsMitigated">
+                        <label for="safety-hazards-mitigated">Safety Hazards Mitigated</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <input type="checkbox" id="first-aid-kit-present" name="firstAidKitPresent">
+                        <label for="first-aid-kit-present">First Aid Kit Present</label>
+                    </div>
+                </fieldset>
+            
+            <!-- Contingency Section -->
+                <fieldset>
+                    <legend>Contingency</legend>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="contingency-lines-present" name="contingenyLinesPresent">
+                        <label for="contingency-lines-present">Contingency Lines Present</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="contingency-resources" name="contingencyResources">
+                        <label for="contingency-resources">Contingency Resources Available</label>
+                        <input type="text" placeholder="Notes..." class="notes">
+                    </div>
+                </fieldset>    
+
+            <!-- Test Fire Section -->
+                <fieldset>
+                    <legend>Test Fire</legend>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="test-fire-ignited" name="testFireIgnited">
+                        <label for="test-fire-ignited">Test Fire Ignited</label>
+                        <input type="text" placeholder="Location, etc..." class="notes">
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="test-fire-successful" name="testFireSuccessful">
+                        <label for="test-fire-successful">Test Fire Successful</label>
                         <input type="text" placeholder="Notes..." class="notes">
                     </div>
                 </fieldset>
 
-            <!-- Communications Section -->
-            
-            <!-- Notifications Section -->
-            
-            <!-- Safety Section -->
-            
-            <!-- Contingency Section -->
-            
-            <!-- Test Fire Section -->
-            
             <!-- Go/No-go Section -->
                 <fieldset>
                     <legend>Go/No-Go Checklist</legend>
                     
                     <div class="checklist-item">
-                        <input type="checkbox" id="go-nogo-complete" name="goNogoComplete">
+                        <input type="checkbox" id="go-nogo-complete" name="goNogoComplete" required>
                         <label for="go-nogo-complete">Go/No-Go Checklist Completed</label>
                     </div>
                 </fieldset>
             
             <!-- Buttons -->
                 <div class="form-buttons">
-                    <button type="submit">Save Checklist</button>
+                    <button type="submit" id="submit-btn">Save Checklist</button>
+                    <button type="button" id="pdf-btn">Download PDF</button>
                     <button type="button" id="reset-btn">Reset</button>
                 </div>
 

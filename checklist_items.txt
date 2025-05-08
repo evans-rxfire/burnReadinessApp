@@ -39,7 +39,7 @@ Burn Readiness Checklist
 	total number present? names?
 
 
-Equipment
+--Equipment
 	number of pumper/engines required? 
 		number present?
 	UTVs (w/ sprayer) required?
@@ -65,7 +65,7 @@ Equipment
 	'Smoke on road' signs
 
 
-Communications
+--Communications
 	number radios needed?
 		number present
 	
@@ -73,7 +73,7 @@ Communications
 	radio checks made?
 	
 	
-Notifications
+--Notifications
 	County dispatch - time called
 	nearest fire dept
 	County Fire Marshal
@@ -88,32 +88,31 @@ Notifications
 	Neighbors
 
 
-Safety
+--Safety
 	Specific safety hazards present? (notes)
 		are they mitigated?
 
 
-Test fire
+--Test fire
 	test fire ignitetd?
 	test fire successful?
 
 
-Contingency planning
+--Contingency planning
 	are contingency lines present?
 	on or off the property?
 
 
-Smoke management
+--Smoke management
 	is forecast ventilation rate (transport winds and mixing height) within prescription?
 	will smoke likely impact public roadway or sensitive receptor?
 	have any required TCEQ permits/special permissions been obtained?
 	
-
-Briefing
+--Briefing
 	all personnel briefed?
 	maps distributed?
 
-Other
+--Other
 	Is the county in a burn ban?
 	Has an exemption to the ban been granted?
 		date
