@@ -38,6 +38,38 @@ function resetChecklist() {
     document.getElementById("checklist-form").reset();
 }
 
+function exportToTextFile() {
+    const savedData = JSON.parse(localStorage.getItem("checklistData"));
+    if (!savedData) {
+      alert("No saved checklist data found.");
+      return;
+    }
+  
+    let text = "Prescribed Fire Readiness Checklist\n";
+    text += "=====================================\n\n";
+  
+    Object.entries(savedData).forEach(([id, value]) => {
+      const label = id.replace(/-/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
+      if (typeof value === "boolean") {
+        text += `${label}: ${value ? "✅ YES" : "❌ NO"}\n`;
+      } else {
+        text += `${label}: ${value || "(blank)"}\n`;
+      }
+    });
+  
+    const blob = new Blob([text], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+  
+    const today = new Date().toISOString().split("T")[0];
+    a.href = url;
+    a.download = `fire_checklist_${today}.txt`;
+    a.click();
+  
+    URL.revokeObjectURL(url);
+  }
+  
+
 document.addEventListener("DOMContentLoaded", () => {
     loadChecklist();
 
@@ -55,20 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         alert("Checklist saved! (Data is stored in your browser)");
     });
+
+    document.getElementById("txt-btn").addEventListener("click", exportToTextFile);
 });
-
-function exportToPDF() {
-    const element = document.getElementById("checklist-form");
-
-    const options = {
-        margin: 10,
-        filename: `Prescribed_Fire_Checklist_${new Date().toISOString().split("T")[0]}.pdf`,
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { format: "a4", orientation: "portrait" }
-    };
-
-    html2pdf().from(element).set(options).save();
-}
-
-document.getElementById("pdf-btn").addEventListener("click", exportToPDF);

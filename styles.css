@@ -111,3 +111,23 @@ button:hover {
 #reset-btn:hover {
   background-color: #5a6268;
 }
+
+@media print {
+  button, .form-buttons {
+    display: none !important;
+  }
+}
+
+#pdf-content {
+  padding: 20px;
+  font-size: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+}
+
+#pdf-content * {
+  box-sizing: border-box;
+  transform: none !important;
+  position: static !important;
+}
