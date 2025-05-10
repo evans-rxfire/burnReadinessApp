@@ -290,6 +290,11 @@
                         <label for="frequencies-set">Radio Frequencies Set</label>
                         <input type="text" placeholder="Channels, Freqs, etc..." class="notes">
                     </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="radio-checks-complete" name="radioChecksComplete">
+                        <label for="radio-checks-complete">Radio Checks Complete</label>
+                    </div>
                 </fieldset>
 
             <!-- Notifications Section -->
@@ -416,6 +421,7 @@
             <!-- Buttons -->
                 <div class="form-buttons">
                     <button type="submit" id="submit-btn">Save Checklist</button>
+                    <button type="button" id="clipboard-btn">Copy to Clipboard</button>
                     <button type="button" id="txt-btn">Download .txt Summary</button>
                     <button type="button" id="reset-btn">Reset</button>
                 </div>
